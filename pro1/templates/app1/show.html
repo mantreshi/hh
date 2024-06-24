@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+    <title>show</title>
+{% endblock %}
+
+{% block content %}
+<h1>Person Records</h1>
+    <table class ="table table-dark table-striped">
+      <thead>
+        <tr>
+            <td>Person id</td>
+            <td>Person Name</td>
+            <td>EMAIL</td>
+            <td>BIRTH DATE</td>
+            <td>AGE</td>
+            <td>CITY</td>
+            <td>ACTION</td>
+        </tr>
+      </thead>
+    <tbody>
+        {% for person in obj %}
+            <tr>
+                <td>{{person.pid}}</td>
+                <td>{{person.name}}</td>
+                <td>{{person.Email}}</td>
+                <td>{{person.dob}}</td>
+                <td>{{person.age}}</td>
+                <td>{{person.city}}</td>
+                <td>
+                    <a href="/a1/uv/{{person.pid}}/"><button class ="btn btn-success">Update</button></a>
+                    <a href="/a1/dv/{{person.pid}}/"><button class ="btn btn-warning">Delete</button></a>
+
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+
+
+
